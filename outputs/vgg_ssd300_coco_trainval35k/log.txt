@@ -1,0 +1,694 @@
+2022-11-20 22:06:53,886 SSD INFO: Using 1 GPUs
+2022-11-20 22:06:53,886 SSD INFO: Namespace(ckpt=None, config_file='configs/vgg_ssd300_coco_trainval35k.yaml', local_rank=0, opts=[], output_dir='eval_results')
+2022-11-20 22:06:53,887 SSD INFO: Loaded configuration file configs/vgg_ssd300_coco_trainval35k.yaml
+2022-11-20 22:06:53,888 SSD INFO: 
+MODEL:
+  NUM_CLASSES: 4
+  PRIORS:
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 300
+DATASETS:
+  TRAIN: ("coco_2014_train", "coco_2014_valminusminival")
+  TEST: ("coco_2014_minival", )
+SOLVER:
+  MAX_ITER: 400000
+  LR_STEPS: [280000, 360000]
+  GAMMA: 0.1
+  BATCH_SIZE: 32
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/vgg_ssd300_coco_trainval35k'
+2022-11-20 22:06:53,890 SSD INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_minival',)
+  TRAIN: ('coco_2014_train', 'coco_2014_valminusminival')
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 300
+  PIXEL_MEAN: [123, 117, 104]
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256)
+    PRETRAINED: True
+  BOX_HEAD:
+    NAME: SSDBoxHead
+    PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cpu
+  META_ARCHITECTURE: SSDDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 4
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/vgg_ssd300_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 32
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [280000, 360000]
+  MAX_ITER: 400000
+  MOMENTUM: 0.9
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2022-11-20 22:06:54,181 SSD.inference INFO: No checkpoint found.
+2022-11-20 22:09:00,793 SSD INFO: Using 1 GPUs
+2022-11-20 22:09:00,793 SSD INFO: Namespace(ckpt=None, config_file='configs/vgg_ssd300_coco_trainval35k.yaml', local_rank=0, opts=[], output_dir='eval_results')
+2022-11-20 22:09:00,794 SSD INFO: Loaded configuration file configs/vgg_ssd300_coco_trainval35k.yaml
+2022-11-20 22:09:00,795 SSD INFO: 
+MODEL:
+  NUM_CLASSES: 4
+  PRIORS:
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 300
+DATASETS:
+  TRAIN: ("train", )
+  TEST: ("coco_2014_minival", )
+SOLVER:
+  MAX_ITER: 400000
+  LR_STEPS: [280000, 360000]
+  GAMMA: 0.1
+  BATCH_SIZE: 32
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/vgg_ssd300_coco_trainval35k'
+2022-11-20 22:09:00,797 SSD INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_minival',)
+  TRAIN: ('train',)
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 300
+  PIXEL_MEAN: [123, 117, 104]
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256)
+    PRETRAINED: True
+  BOX_HEAD:
+    NAME: SSDBoxHead
+    PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cpu
+  META_ARCHITECTURE: SSDDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 4
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/vgg_ssd300_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 32
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [280000, 360000]
+  MAX_ITER: 400000
+  MOMENTUM: 0.9
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2022-11-20 22:09:01,056 SSD.inference INFO: No checkpoint found.
+2022-11-20 22:09:59,404 SSD INFO: Using 1 GPUs
+2022-11-20 22:09:59,404 SSD INFO: Namespace(ckpt=None, config_file='configs/vgg_ssd300_coco_trainval35k.yaml', local_rank=0, opts=[], output_dir='eval_results')
+2022-11-20 22:09:59,405 SSD INFO: Loaded configuration file configs/vgg_ssd300_coco_trainval35k.yaml
+2022-11-20 22:09:59,405 SSD INFO: 
+MODEL:
+  NUM_CLASSES: 4
+  PRIORS:
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 300
+DATASETS:
+  TRAIN: ("train", )
+  TEST: ("coco_2014_minival", )
+SOLVER:
+  MAX_ITER: 400000
+  LR_STEPS: [280000, 360000]
+  GAMMA: 0.1
+  BATCH_SIZE: 32
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/vgg_ssd300_coco_trainval35k'
+2022-11-20 22:09:59,407 SSD INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_minival',)
+  TRAIN: ('train',)
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 300
+  PIXEL_MEAN: [123, 117, 104]
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256)
+    PRETRAINED: True
+  BOX_HEAD:
+    NAME: SSDBoxHead
+    PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cpu
+  META_ARCHITECTURE: SSDDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 4
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/vgg_ssd300_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 32
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [280000, 360000]
+  MAX_ITER: 400000
+  MOMENTUM: 0.9
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2022-11-20 22:09:59,629 SSD.inference INFO: No checkpoint found.
+2022-11-20 22:10:58,494 SSD INFO: Using 1 GPUs
+2022-11-20 22:10:58,494 SSD INFO: Namespace(ckpt=None, config_file='configs/vgg_ssd300_coco_trainval35k.yaml', local_rank=0, opts=[], output_dir='eval_results')
+2022-11-20 22:10:58,495 SSD INFO: Loaded configuration file configs/vgg_ssd300_coco_trainval35k.yaml
+2022-11-20 22:10:58,495 SSD INFO: 
+MODEL:
+  NUM_CLASSES: 4
+  PRIORS:
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 300
+DATASETS:
+  TRAIN: ("train", )
+  TEST: ( )
+SOLVER:
+  MAX_ITER: 400000
+  LR_STEPS: [280000, 360000]
+  GAMMA: 0.1
+  BATCH_SIZE: 32
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/vgg_ssd300_coco_trainval35k'
+2022-11-20 22:10:58,497 SSD INFO: Running with config:
+DATASETS:
+  TEST: ()
+  TRAIN: ('train',)
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 300
+  PIXEL_MEAN: [123, 117, 104]
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256)
+    PRETRAINED: True
+  BOX_HEAD:
+    NAME: SSDBoxHead
+    PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cpu
+  META_ARCHITECTURE: SSDDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 4
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/vgg_ssd300_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 32
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [280000, 360000]
+  MAX_ITER: 400000
+  MOMENTUM: 0.9
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2022-11-20 22:10:58,713 SSD.inference INFO: No checkpoint found.
+2022-11-20 22:11:13,347 SSD INFO: Using 1 GPUs
+2022-11-20 22:11:13,347 SSD INFO: Namespace(ckpt=None, config_file='configs/vgg_ssd300_coco_trainval35k.yaml', local_rank=0, opts=[], output_dir='eval_results')
+2022-11-20 22:11:13,348 SSD INFO: Loaded configuration file configs/vgg_ssd300_coco_trainval35k.yaml
+2022-11-20 22:11:13,348 SSD INFO: 
+MODEL:
+  NUM_CLASSES: 4
+  PRIORS:
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 300
+DATASETS:
+  TRAIN: ("train", )
+
+SOLVER:
+  MAX_ITER: 400000
+  LR_STEPS: [280000, 360000]
+  GAMMA: 0.1
+  BATCH_SIZE: 32
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/vgg_ssd300_coco_trainval35k'
+2022-11-20 22:11:13,350 SSD INFO: Running with config:
+DATASETS:
+  TEST: ()
+  TRAIN: ('train',)
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 300
+  PIXEL_MEAN: [123, 117, 104]
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256)
+    PRETRAINED: True
+  BOX_HEAD:
+    NAME: SSDBoxHead
+    PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cpu
+  META_ARCHITECTURE: SSDDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 4
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/vgg_ssd300_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 32
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [280000, 360000]
+  MAX_ITER: 400000
+  MOMENTUM: 0.9
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2022-11-20 22:11:13,581 SSD.inference INFO: No checkpoint found.
+2022-11-20 22:11:43,343 SSD INFO: Using 1 GPUs
+2022-11-20 22:11:43,344 SSD INFO: Namespace(ckpt=None, config_file='configs/vgg_ssd300_coco_trainval35k.yaml', local_rank=0, opts=[], output_dir='eval_results')
+2022-11-20 22:11:43,344 SSD INFO: Loaded configuration file configs/vgg_ssd300_coco_trainval35k.yaml
+2022-11-20 22:11:43,344 SSD INFO: 
+MODEL:
+  NUM_CLASSES: 4
+  PRIORS:
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 300
+DATASETS:
+  TRAIN: ("train", )
+  TEST: ("train", )
+SOLVER:
+  MAX_ITER: 400000
+  LR_STEPS: [280000, 360000]
+  GAMMA: 0.1
+  BATCH_SIZE: 32
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/vgg_ssd300_coco_trainval35k'
+2022-11-20 22:11:43,346 SSD INFO: Running with config:
+DATASETS:
+  TEST: ('train',)
+  TRAIN: ('train',)
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 300
+  PIXEL_MEAN: [123, 117, 104]
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256)
+    PRETRAINED: True
+  BOX_HEAD:
+    NAME: SSDBoxHead
+    PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cpu
+  META_ARCHITECTURE: SSDDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 4
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/vgg_ssd300_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 32
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [280000, 360000]
+  MAX_ITER: 400000
+  MOMENTUM: 0.9
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2022-11-20 22:11:43,564 SSD.inference INFO: No checkpoint found.
+2022-11-20 22:22:22,217 SSD INFO: Using 1 GPUs
+2022-11-20 22:22:22,218 SSD INFO: Namespace(ckpt=None, config_file='configs/vgg_ssd300_coco_trainval35k.yaml', local_rank=0, opts=[], output_dir='eval_results')
+2022-11-20 22:22:22,219 SSD INFO: Loaded configuration file configs/vgg_ssd300_coco_trainval35k.yaml
+2022-11-20 22:22:22,219 SSD INFO: 
+MODEL:
+  NUM_CLASSES: 4
+  PRIORS:
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 300
+DATASETS:
+  TRAIN: ("train", )
+  TEST: ("test", )
+SOLVER:
+  MAX_ITER: 400000
+  LR_STEPS: [280000, 360000]
+  GAMMA: 0.1
+  BATCH_SIZE: 32
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/vgg_ssd300_coco_trainval35k'
+2022-11-20 22:22:22,221 SSD INFO: Running with config:
+DATASETS:
+  TEST: ('test',)
+  TRAIN: ('train',)
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 300
+  PIXEL_MEAN: [123, 117, 104]
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256)
+    PRETRAINED: True
+  BOX_HEAD:
+    NAME: SSDBoxHead
+    PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cpu
+  META_ARCHITECTURE: SSDDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 4
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/vgg_ssd300_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 32
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [280000, 360000]
+  MAX_ITER: 400000
+  MOMENTUM: 0.9
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2022-11-20 22:22:22,519 SSD.inference INFO: No checkpoint found.
+2022-11-20 22:26:11,872 SSD INFO: Using 1 GPUs
+2022-11-20 22:26:11,873 SSD INFO: Namespace(ckpt=None, config_file='configs/vgg_ssd300_coco_trainval35k.yaml', local_rank=0, opts=[], output_dir='eval_results')
+2022-11-20 22:26:11,873 SSD INFO: Loaded configuration file configs/vgg_ssd300_coco_trainval35k.yaml
+2022-11-20 22:26:11,874 SSD INFO: 
+MODEL:
+  NUM_CLASSES: 4
+  PRIORS:
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 300
+DATASETS:
+  TRAIN: ("train", )
+  TEST: ("test", )
+SOLVER:
+  MAX_ITER: 400000
+  LR_STEPS: [280000, 360000]
+  GAMMA: 0.1
+  BATCH_SIZE: 32
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/vgg_ssd300_coco_trainval35k'
+2022-11-20 22:26:11,876 SSD INFO: Running with config:
+DATASETS:
+  TEST: ('test',)
+  TRAIN: ('train',)
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 300
+  PIXEL_MEAN: [123, 117, 104]
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256)
+    PRETRAINED: True
+  BOX_HEAD:
+    NAME: SSDBoxHead
+    PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cpu
+  META_ARCHITECTURE: SSDDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 4
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/vgg_ssd300_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 32
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [280000, 360000]
+  MAX_ITER: 400000
+  MOMENTUM: 0.9
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2022-11-20 22:26:12,131 SSD.inference INFO: No checkpoint found.
+2022-11-20 22:29:25,895 SSD INFO: Using 1 GPUs
+2022-11-20 22:29:25,896 SSD INFO: Namespace(ckpt=None, config_file='configs/vgg_ssd300_coco_trainval35k.yaml', local_rank=0, opts=[], output_dir='eval_results')
+2022-11-20 22:29:25,896 SSD INFO: Loaded configuration file configs/vgg_ssd300_coco_trainval35k.yaml
+2022-11-20 22:29:25,896 SSD INFO: 
+MODEL:
+  NUM_CLASSES: 4
+  PRIORS:
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 4, 4]
+INPUT:
+  IMAGE_SIZE: 300
+DATASETS:
+  TRAIN: ("coco_2014_train",)
+  TEST: ("coco_2014_minival", )
+SOLVER:
+  MAX_ITER: 400000
+  LR_STEPS: [280000, 360000]
+  GAMMA: 0.1
+  BATCH_SIZE: 32
+  LR: 1e-3
+
+OUTPUT_DIR: 'outputs/vgg_ssd300_coco_trainval35k'
+2022-11-20 22:29:25,898 SSD INFO: Running with config:
+DATASETS:
+  TEST: ('coco_2014_minival',)
+  TRAIN: ('coco_2014_train',)
+DATA_LOADER:
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+INPUT:
+  IMAGE_SIZE: 300
+  PIXEL_MEAN: [123, 117, 104]
+MODEL:
+  BACKBONE:
+    NAME: vgg
+    OUT_CHANNELS: (512, 1024, 512, 256, 256, 256)
+    PRETRAINED: True
+  BOX_HEAD:
+    NAME: SSDBoxHead
+    PREDICTOR: SSDBoxPredictor
+  CENTER_VARIANCE: 0.1
+  DEVICE: cpu
+  META_ARCHITECTURE: SSDDetector
+  NEG_POS_RATIO: 3
+  NUM_CLASSES: 4
+  PRIORS:
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4, 6, 6, 6, 4, 4]
+    CLIP: True
+    FEATURE_MAPS: [38, 19, 10, 5, 3, 1]
+    MAX_SIZES: [45, 99, 153, 207, 261, 315]
+    MIN_SIZES: [21, 45, 99, 153, 207, 261]
+    STRIDES: [8, 16, 32, 64, 100, 300]
+  SIZE_VARIANCE: 0.2
+  THRESHOLD: 0.5
+OUTPUT_DIR: outputs/vgg_ssd300_coco_trainval35k
+SOLVER:
+  BATCH_SIZE: 32
+  GAMMA: 0.1
+  LR: 0.001
+  LR_STEPS: [280000, 360000]
+  MAX_ITER: 400000
+  MOMENTUM: 0.9
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WEIGHT_DECAY: 0.0005
+TEST:
+  BATCH_SIZE: 10
+  CONFIDENCE_THRESHOLD: 0.01
+  MAX_PER_CLASS: -1
+  MAX_PER_IMAGE: 100
+  NMS_THRESHOLD: 0.45
+2022-11-20 22:29:26,145 SSD.inference INFO: No checkpoint found.
+2022-11-20 22:29:26,162 SSD.inference INFO: Evaluating coco_2014_minival dataset(0 train):
